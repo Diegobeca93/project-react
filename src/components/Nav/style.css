@@ -1,0 +1,26 @@
+.navContainer {
+    background-color: brown;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+    justify-content: space-between;
+    height: 50px;
+}
+.logoNav {
+    margin: 0 50px
+}
+h2 {
+    display: contents;
+}
+.navLinks{
+    display: flex;
+    align-items: center;
+}
+ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin-right: 50px;
+}
