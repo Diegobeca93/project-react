@@ -2,8 +2,7 @@ import React from 'react'
 // import './style.css'
 import styled from 'styled-components'
 import SearchIcon from '@material-ui/icons/Search';
-import Badge from '@material-ui/core/Badge';
-import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
+import CartWidget from '../CartWidget'
 
 const Container = styled.div`
     height: 60px;
@@ -11,7 +10,7 @@ const Container = styled.div`
 `;
 const Wrapper = styled.div`
     padding: 10px 20px;
-    display: flex;
+    display: flex;  
     align-items: center;
     justify-content: space-between;
 `;
@@ -66,15 +65,9 @@ const Nav = () => {
                         REGISTRARSE
                     </MenuItems>
                     <MenuItems>
-                        SING IN
+                        INICIAR
                     </MenuItems>
-                    <MenuItems>
-                        <Badge 
-                        badgeContent={4} 
-                        color="primary">
-                            <ShoppingCartOutlinedIcon />
-                        </Badge>
-                    </MenuItems>
+                    <CartWidget />
                 </Right>
             </Wrapper>
         </Container>
