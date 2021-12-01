@@ -1,13 +1,28 @@
-import React from 'react'
-import ItemCount from './ItemCount'
+import React from 'react';
+import { useState, useEffect } from 'react'
+import ItemList from './ItemList';  
+import { getProductos } from '../productos'
 
-function ItemListContainer() {
+const ItemListContainer = () => {
+    const [productos, setProductos] = useState([]);
+    console.log("recibo productos:", productos)
+    useEffect(() => {
+        const list = getProductos()
+        list.then(list => {
+            setProductos(list)
+        })
+
+        return (() => {
+            setProductos([])
+        })
+    }, [])
+    
     return (
         <div>
-            <h3>Hola</h3>
-            <ItemCount />
+            <ItemList productos={ productos } />
         </div>
     )
+    
 }
 
 export default ItemListContainer
