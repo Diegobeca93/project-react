@@ -38,7 +38,7 @@ const AddCarrito= styled.button`
     background: lightgreen;
 `
 
-const ItemCount = () => {
+const ItemCount = ({props}) => {
     const [contador, setcontador] = useState(0);
     const [stock, setstock] = useState(10);
 
