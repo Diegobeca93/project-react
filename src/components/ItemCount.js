@@ -4,13 +4,10 @@ import { useState } from 'react'
 
 
 const Container = styled.div`
-    height: 300px;
-    width: 500px;
     justify-content: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: gainsboro;
     margin: 0 auto;
 `;
 const Count = styled.div`
@@ -23,19 +20,19 @@ const Count = styled.div`
 const Restar = styled.button`
     width: 10%;
     color: black;
-    background-color: transparent;
+    background-color: tomato;
     font-size: 20px;
 `;
 const Sumar = styled.button`
     width: 10%;
     color: black;
-    background-color: transparent;
+    background-color: springgreen;
     font-size: 20px;
 `
 const AddCarrito= styled.button`
     margin: 20px;
     padding: 8px 100px;
-    background: lightgreen;
+    background: gainsboro;
 `
 
 const ItemCount = ({props}) => {

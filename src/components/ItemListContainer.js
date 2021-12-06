@@ -5,7 +5,7 @@ import { getProductos } from '../productos'
 
 const ItemListContainer = () => {
     const [productos, setProductos] = useState([]);
-    console.log("recibo productos:", productos)
+    
     useEffect(() => {
         const list = getProductos()
         list.then(list => {
