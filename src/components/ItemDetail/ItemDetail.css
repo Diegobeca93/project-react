@@ -43,6 +43,6 @@ p {
 select {
     width: 60px;
     text-align: center;
-    display: flex;
+    display: flex;  
     margin: 0 auto;
 }

@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
 // import './style.css'
-import styled from 'styled-components'
+import styled from 'styled-components';
 import SearchIcon from '@material-ui/icons/Search';
-import CartWidget from '../CartWidget'
+import CartWidget from '../CartWidget';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
     height: 60px;
@@ -48,6 +49,23 @@ const Right = styled.div`
 const MenuItems = styled.div`
     margin-left: 25px;
 `
+const Ul = styled.ul`
+    position: absolute;
+    margin: 5px;
+    background-color: #000;
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 0;
+
+    &:hover{
+        opacity:1
+    }
+`
+const Li = styled.li`
+    list-style: none;   
+    color: #fff;
+    margin:  8px 0;
+`
 
 const Nav = () => {
     return (
@@ -62,10 +80,15 @@ const Nav = () => {
                 <Center><Logo>Ecommer</Logo></Center>
                 <Right>
                     <MenuItems>
-                        REGISTRARSE
+                        <Link to="/"> INICIAR </Link>
                     </MenuItems>
                     <MenuItems>
-                        INICIAR
+                        <Link to="/categoria"> CATEGORIA </Link>
+                        <Ul>
+                            <Li> <Link to="/categoria/Camisas"> Camisas </Link> </Li>
+                            <Li> <Link to="/categoria/Calzado"> Calzados </Link> </Li>
+                            <Li> <Link to="/categoria/Remeras"> Remeras </Link> </Li>
+                        </Ul>
                     </MenuItems>
                     <CartWidget />
                 </Right>

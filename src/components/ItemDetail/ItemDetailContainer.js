@@ -3,24 +3,32 @@ import React from 'react';
 import ItemDetail from './ItemDetail';
 import { useState, useEffect } from 'react';
 import { getProductos } from '../../productos';
+import { useParams } from 'react-router-dom';
 
-const ItemDetailContainer = ({ ItemId = 1 }) => {
-    const [productos, setProductos] = useState([]);
-    
-    useEffect(() => {
-        const list = getProductos(ItemId)
-        list.then(list => {
-            setProductos(list)
+const ItemDetailContainer = () => {
+    const [producto, setProducto] = useState([]);
+    const { id } = useParams()
+        
+    useEffect(function () {
+        let list = getProductos(Number(id));
+
+
+        list
+        .then(()=> {
+            setProducto(list)
+        })
+        .catch((error) =>{
+            console.log(error)
         })
 
         return (() => {
-            setProductos([])
+            setProducto([])
         })
-    }, [])
+    }, [id])
     
 
     return (
-        <ItemDetail productos={ productos }/>
+        <ItemDetail productos={ producto }/>
     )
 }
 
