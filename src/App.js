@@ -19,13 +19,13 @@ function App() {
             </Route>
 
             <Route path="/categoria/:categoriaId">
-              <ItemDetailContainer idReq />
+              <ItemListContainer />
             </Route>
 
-            
             <Route path="/producto/:id">
-              <ItemDetailContainer idReq />
+              <ItemDetailContainer />
             </Route>
+            
 
           </Switch>
       </BrowserRouter>  

@@ -34,6 +34,12 @@ const AddCarrito= styled.button`
     padding: 8px 100px;
     background: gainsboro;
 `
+const Number = styled.h4`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
 
 const ItemCount = ({props}) => {
     const [contador, setcontador] = useState(0);
@@ -61,7 +67,7 @@ const ItemCount = ({props}) => {
         <Container>
             <Count>
                 <Restar onClick={ restarClick }>-</Restar>
-                <h4>{ contador }</h4>
+                <Number>{ contador }</Number>
                 <Sumar onClick={ sumarClick }>+</Sumar>
             </Count>
             <AddCarrito>Agregar Carrito</AddCarrito>

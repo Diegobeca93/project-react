@@ -10,7 +10,7 @@ const Container = styled.div`
     
 `;
 const Wrapper = styled.div`
-    padding: 10px 20px;
+    padding: 10px 40px;
     display: flex;  
     align-items: center;
     justify-content: space-between;
@@ -86,7 +86,7 @@ const Nav = () => {
                         <Link to="/categoria"> CATEGORIA </Link>
                         <Ul>
                             <Li> <Link to="/categoria/Camisas"> Camisas </Link> </Li>
-                            <Li> <Link to="/categoria/Calzado"> Calzados </Link> </Li>
+                            <Li> <Link to="/categoria/Calzados"> Calzados </Link> </Li>
                             <Li> <Link to="/categoria/Remeras"> Remeras </Link> </Li>
                         </Ul>
                     </MenuItems>

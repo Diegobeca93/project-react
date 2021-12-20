@@ -2,7 +2,7 @@
 import React from 'react';
 import ItemDetail from './ItemDetail';
 import { useState, useEffect } from 'react';
-import { getProductos } from '../../productos';
+import { getProductosById } from '../../productos';
 import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
@@ -10,17 +10,17 @@ const ItemDetailContainer = () => {
     const { id } = useParams()
         
     useEffect(function () {
-        let list = getProductos(Number(id));
 
+        let getProduct = getProductosById(Number(id));
 
-        list
-        .then(()=> {
-            setProducto(list)
+        getProduct
+        .then((item)=> { 
+            console.log(item)
+            setProducto(item)
         })
-        .catch((error) =>{
+        .catch((error) =>{      
             console.log(error)
         })
-
         return (() => {
             setProducto([])
         })

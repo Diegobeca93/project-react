@@ -36,7 +36,7 @@ const productos = [
     
 ]
 
-export const getProductos = (idReq) => {
+export const getProductosById = (idReq) => {
 
     return new Promise ((resolve, reject) => {
         setTimeout(() => {
@@ -50,3 +50,31 @@ export const getProductos = (idReq) => {
         }, 500);    
     })
 }   
+
+export const getProductos = () => {
+
+    return new Promise ((resolve, reject)=>{
+        setTimeout(() =>{     
+           resolve(productos);
+        },500);
+    })
+}
+
+export const getProductosByCategoty = (category) => {
+
+    return new Promise ((resolve, reject) => {
+        setTimeout(() => {
+
+            const itemsCategoria = productos.filter((element) => {
+                // console.log('<>', element.categoria, category)
+                return element.categoria === category;
+            }); 
+
+            itemsCategoria  
+            ? resolve(itemsCategoria) 
+            : reject (new Error ("No encontrado"));
+        }, 500);    
+    })
+}   
+
+

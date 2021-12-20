@@ -1,28 +1,29 @@
 import React from 'react';
 import { useState, useEffect } from 'react'
 import ItemList from './ItemList';  
-import { getProductos } from '../productos'
+import { getProductos, getProductosByCategoty } from '../productos'
 import { useParams } from 'react-router-dom';
+// import { List } from '@material-ui/core';
 
 const ItemListContainer = () => {
     const [productos, setProductos] = useState([]);
     const { categoriaId } = useParams()
-
-    
+   
     useEffect(() => {
-        const list = getProductos(categoriaId)
+        const list = categoriaId? getProductosByCategoty(categoriaId): getProductos();
 
-        list.then(list => {
-            setProductos(list)
+        list.then(List => {
+            setProductos(List)
         })
-        .catch((error) =>{
+        .catch((error) =>{  
             console.log(error)
         })
 
         return (() => {
             setProductos([])
         })
-    }, [])
+    }, [categoriaId])
+    
     
     return (
         <div>

@@ -10,16 +10,16 @@ const ItemDetail = ({ productos }) => {
                         <img src={productos.src} alt={productos.nombre} />
                 </div> 
                 <div className="inf">
-                    <h1 className="product__title">{productos.nombre}</h1>
+                    <h1 className="inf__title">{productos.nombre}</h1>
                     <p>{productos.detail}</p>
-                    <span className="product__price"> ${productos.precio} </span>
-                    <select name="" id="">
-                        <option>talle</option>
-                        <option>S</option>
-                        <option>M</option>
-                        <option>L</option>
-                        <option>XL</option>
-                    </select>
+                    <span className="inf__price"> ${productos.precio} </span>
+                    <div className="size">
+                        <h3>Size :</h3>
+                        <span className="size__option">S</span>
+                        <span className="size__option">M</span>
+                        <span className="size__option">L</span>
+                        <span className="size__option">XL</span>
+                    </div>
                     <ItemCount stock={productos.stock} />
                 </div>
             </div>  
