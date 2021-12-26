@@ -71,7 +71,7 @@ const ItemCount = ({props}) => {
                 <Sumar onClick={ sumarClick }>+</Sumar>
             </Count>
             <AddCarrito>Agregar Carrito</AddCarrito>
-
+        
         </Container>
     )
 }
