@@ -3,7 +3,8 @@ import Item from './Item/Item';
 import styled from 'styled-components';
 
 const  Container= styled.ul`
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     margin: 50px auto;
     padding: 0 50px;
 `;

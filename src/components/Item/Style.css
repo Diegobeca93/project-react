@@ -47,7 +47,7 @@
     display: inline-block;
     color: #fff;
     text-align: center;
-    padding: 1.75em 3.5em;
+    padding: 1em 2em;
     white-space: nowrap;
     border-radius: 5px;
   }
@@ -55,7 +55,7 @@
   .product {
     position: relative;
     margin: 50px 15px;
-    width: 100%;
+    max-width: 500px;
     padding: 10px;
     border-radius: 8px;
     background-color: #fff;
@@ -68,6 +68,7 @@
     margin-top: -5px;
     margin-bottom: 30px;
     max-width: none;
+    max-height: 500px;
   }
   
   .product__title {
@@ -86,21 +87,21 @@
     left: -20px;
     width: 70px;
     height: 70px;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: rgba(54, 45, 45, 0.979);
     color: #fff;
     border-radius: 50%;
+    font-size: initial;
   }
   
   .product__btn {
     position: absolute;
     bottom: -30px;
     right: 30px;
-    background-color: rgba(207, 9, 44, 0.95);
-    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 30px 25px -20px rgba(0, 0, 0, 0.15);
+    
   }
-  .product__btn:hover {
+
+  /* .product__btn:hover {
     box-shadow: 0 36px 28px -20px rgba(0, 0, 0, 0.2);
     background-color: #c5092a;
   }
-  
+   */

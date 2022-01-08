@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useState } from 'react'
-
+import { useState } from 'react';
+import { Button } from '@material-ui/core'
 
 const Container = styled.div`
     justify-content: center;
@@ -15,6 +15,7 @@ const Count = styled.div`
     width: 300px;
     background-color: #fff;
     justify-content: space-between;
+    margin-bottom: 15px;
 
 `;
 const Restar = styled.button`
@@ -29,11 +30,6 @@ const Sumar = styled.button`
     background-color: springgreen;
     font-size: 20px;
 `
-const AddCarrito= styled.button`
-    margin: 20px;
-    padding: 8px 100px;
-    background: gainsboro;
-`
 const Number = styled.h4`
     width: 100%;
     display: flex;
@@ -41,28 +37,27 @@ const Number = styled.h4`
     align-items: center;
 `
 
-const ItemCount = ({props}) => {
-    const [contador, setcontador] = useState(0);
-    const [stock, setstock] = useState(10);
+const ItemCount = ({onAdd, stock, initial}) => {
+    const [contador, setcontador] = useState(initial);
+    
 
     const sumarClick = () => {
 
         if (contador < stock){
             setcontador(contador + 1 )
         } else {
-            alert("Solo puedes añadir hasta 10 productos.")
-            setstock(stock)   
+            alert("Solo puedes añadir hasta 10 productos.")  
         }
         
     }
     const restarClick = () => {
 
-        if (contador > 0) {
+        if (contador > 1) {
             setcontador(contador - 1 )
         }
     }
    
-
+    
     return (
         <Container>
             <Count>
@@ -70,7 +65,10 @@ const ItemCount = ({props}) => {
                 <Number>{ contador }</Number>
                 <Sumar onClick={ sumarClick }>+</Sumar>
             </Count>
-            <AddCarrito>Agregar Carrito</AddCarrito>
+            <Button className="finish__buying" variant="contained" color="primary"
+            onClick={()=>{onAdd(contador)}}>
+                Agregar Carrito
+            </Button>
         
         </Container>
     )
